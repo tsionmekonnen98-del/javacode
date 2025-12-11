@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    function calculateTax(cost, taxPercent){
+
+        console.log(cost * taxPercent);
+    }
+
+    calculateTax(2000,0.2);//the out put is 400.this is passing a value into the function.
+    calculateTax(5000);//in this the taxpercent is undefined so 5000 * undfined is not a number so in the console it display NaN(not a number)//if we want to  display anumber in the console we must give the default value in the taxpercent
+    </script>
+</body>
+</html>
