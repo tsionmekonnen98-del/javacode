@@ -11,7 +11,15 @@
 <script>
    const product = {
   name: 'socks',
-  price: 1090
+  price: 1090,
+  'delivery-time': '1 day',
+  rating:{
+    stars: 4.5,
+    count: 87
+  },//this is called nested object.
+  fun: function function1(){
+  console.log('function inside object');
+  }  //we can also use function inside the object.
    };
    console.log(product);
    console.log(product.name);
@@ -24,9 +32,22 @@
    product.newProperty = true;//we also add new new property by using object name.
    console.log(product);
 
-
+  console.log(product['name']);/*this is the like product.name is show on the console cotton socks.is called bracket notation.but it lets us use property that don't work with dot notation e.g we can't type product.delivery-time b/c javascript thinks this (-) is a minus sign in tis case we must use the bracket notation to solve this problem.*/
+  console.log(product['delivery-time']);
    delete product.newProperty;//we can also delete the property from the object.
    console.log(product);  
+   console.log(product.rating.count);
+    product.fun();//this is calling the function to access the value inside the function.
+    console.log(typeof console.log);/*b/c log is  the function that is save inside the console object*/
+     
+    JSON.stringify(product);/*JSON.stringify(product) converts a JavaScript object into a string.JSON is always a string.
+JSON = JavaScript Object Notation
+stringify = change something into a string
+JSON.stringify() lets you store or send objects safely as text.
+*/
+    console.log(JSON.stringify(product));
+    const jsonString = JSON.stringify(product);
+    console.log(JSON.parse(jsonString));//SON.parse = turn string → object
 </script>
 </body>
 </html>
