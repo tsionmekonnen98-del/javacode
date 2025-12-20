@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+
+    <script>
+        console.log(document.querySelector('button').innerHTML);
+
+        document.querySelector('button').innerHTML = 'changed';
+
+        const buttonElement = document.querySelector('.js-button');
+       
+        console.log(buttonElement);
+
+        console.log(document.title);//it shows the above title name.
+        /*built-in objects or object provided by javascript
+        1. console.log('hello');
+        2. Math.random();
+        3.JSON.stringfy(object);
+        4.localStorage.getItem('score');
+        5.DOM 
+        */
+   document.body.innerHTML = 'hello';
+   document.title = 'Good job!';//changing the title property.
+  console.log(document.body);/*document.body is used to display the body element inside the console. document.body is used to convert the HTML element into javascript object.*/
+  document.body.innerHTML = 'changed';//it change the above html code into changed.  
+  document.body.innerHTML = '<button>good job!</button>'; //using innerHTML javascript can replace the HTMl inside the body to when ever we want.
+    </script>
+</body>
+</html>

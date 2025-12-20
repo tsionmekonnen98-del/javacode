@@ -21,14 +21,20 @@
    playGame('scissors');
    "
   >Scissors</button>
+  <p class="js-result"></p>
+   <p class="js-moves"></p>
+  <p class="js-score"></p>
+
 
   <button onclick="
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
   localStorage.removeItem('score');
+  updateScoreElement();
   
   ">Reset Score</button>
+  
 <script>
 
 let score = JSON.parse(localStorage.getItem('score')) ||{
@@ -36,13 +42,9 @@ let score = JSON.parse(localStorage.getItem('score')) ||{
       losses: 0,
       ties: 0
    };
-/*if(!score){//!score is the same with null
-   score ={
-      wins: 0,
-      losses: 0,
-      ties: 0
-   };
-} this the same thing with the above b/c let score =json.parse(localStorage.getItem('score')) is give us null(false) so we prefer the next one b/c we connected by using OR */
+   
+   updateScoreElement();
+
 
 function playGame(playerMove){
 
@@ -88,8 +90,20 @@ let result = '';
    }   
 
    localStorage.setItem('score', JSON.stringify(score));
+     
+     updateScoreElement();
+     
+     document.querySelector('.js-result').innerHTML = result;
 
-   alert(`you picked ${playerMove}. computer picked ${computerMove}. ${result} wins: ${score.wins}, losses: ${score.losses}, Ties: ${score.ties}`);
+     document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+       
+     document.querySelector('js-result').innerHTML = '';
+
+  
+    }
+
+    function updateScoreElement(){
+       document.querySelector('.js-score').innerHTML = `wins: ${score.wins}, losses: ${score.losses}, Ties: ${score.ties}`;
   
     }
 
@@ -103,11 +117,9 @@ let result = '';
     computerMove ='paper';
   }  else if (randomNumber >= 2/3 && randomNumber <1){
     computerMove = 'scissors';
-    /*var data type doesn't follow the rule of scope this means it can be used out side the if-else statment.*/
+    
   }
-  /* function has a scope this mean we create the variable in side the function we can't use that variable out side the function to solve this problem we must firstdeclare that variable out side the function and this variable is called global variable this means we can use this variable any where*/
-   /* we can also return a variable(computerMove) that help us to get the variable out side the function*/
-    }
+}
 </script>
 <!--div.div$*3-->
 </body>

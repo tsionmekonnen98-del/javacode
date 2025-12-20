@@ -47,7 +47,42 @@ JSON.stringify() lets you store or send objects safely as text.
 */
     console.log(JSON.stringify(product));
     const jsonString = JSON.stringify(product);
-    console.log(JSON.parse(jsonString));//SON.parse = turn string → object
+    console.log(JSON.parse(jsonString));//SON.parse = turn string → objec
+    
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    const object1 ={
+        message: 'hello'
+    };
+    const object2 = object1;//is called copy by reference.
+
+    object1.message  = 'Good job!';
+    console.log(object1);//even though we use const we can stil change the value of  in side the object.
+    console.log(object2);
+
+    const object3 = {
+        message: 'Good job!'
+    };
+    console.log(object3 === object1 ); /*it show false even if they are equal value b/c the reference is different*/
+    console.log(object2 === object1);//it shows on the console true b/c they reference is the same.
+    
+    const object4 = {
+        message: 'Good job!',
+        price: 799
+    };
+    //const message = object4.message;
+    const { message, price} = object4;//this line of code is the same thing of the above.
+
+    console.log(message);
+    console.log(price);
+
+    const object5 = {
+   message: message
+    };
+    console.log(object5);
+
+    
 </script>
 </body>
 </html>
