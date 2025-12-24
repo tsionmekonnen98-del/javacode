@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+button{
+     padding: 10px;
+    border: none;
+    border-radius: 4px;
+     background-color: rgb(240, 240, 240);
+     font-size: 16px;
+     font-family: Arial;
+     margin-left: 10px;
+     margin-right: 10px;
+    
+    }
+    .updated{
+         background-color: black;
+         color: white;
+    }
+    .updated:active{
+       background-color: rgb(240, 240, 240);
+     font-size: 16px;
+     font-family: Arial;
+    }
+
+    </style>
+
+</head>
+<body>
+  <button onclick="
+    onof('Gaming');
+    " class="gm" >Gaming</button>
+  <button onclick="
+   onof('Music');
+  " class="mm">Music</button>
+  <button onclick="
+    onof('Tech')
+  " class="te">Tech</button>
+  <script>
+    function onof(className){
+        if(className === 'Gaming'){
+       document.querySelector('.gm').classList.toggle('updated');
+
+    
+        }else if(className === 'Music'){
+      document.querySelector('.mm').classList.toggle('updated');
+
+    
+
+    }else if(className === 'Tech'){
+      document.querySelector('.te').classList.toggle('updated');
+
+    }
+}
+  </script>
+</body>
+</html>

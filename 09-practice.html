@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<input type="text" placeholder="Type something" class="repeat" onkeyup="
+    late()
+    ">
+ <p class="again"></p>
+ <script>
+        function late(){
+        const input = document.querySelector('.repeat');
+        const paragraph = document.querySelector('.again'); 
+        paragraph.innerText = input.value;
+    }
+ </script>
+</body>
+</html>
