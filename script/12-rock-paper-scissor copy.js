@@ -6,10 +6,27 @@ let score = JSON.parse(localStorage.getItem('score')) ||{
    
    updateScoreElement();
 
+  let isAutoPlaying = false;
+  let intervalID;
+  function autoPlay(){
+     if (!isAutoPlaying){
+        intervalID = setInterval(function(){
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+
+   }, 1000);
+   isAutoPlaying = true;
+     } else {
+       clearInterval(intervalID);
+       isAutoPlaying = false;
+     }
+     
+  }
+
 
 function playGame(playerMove){
 
-  const computerMove = pickComputerMove();
+   const computerMove = pickComputerMove();
 let result = '';
 
   if (playerMove === 'scissors'){
@@ -59,9 +76,9 @@ let result = '';
      document.querySelector('.js-moves').innerHTML =  `You
       <img src="images/${playerMove}-emoji.png" class="move-icon" >
       <img src="images/${computerMove}-emoji.png" class="move-icon" >
-      Computer`
+      Computer`;
+       
      
-
   
     }
 
@@ -73,8 +90,7 @@ let result = '';
     
     function pickComputerMove(){
  const randomNumber = Math.random();/*math.random()is used to display random no. between 0 and 1.*/
-  
-    let computerMove = '';
+   let computerMove = '';
   if(randomNumber >= 0 && randomNumber < 1/3){
     computerMove = 'rock';
   } else if(randomNumber >= 1/3 && randomNumber < 2/3){
