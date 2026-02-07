@@ -47,7 +47,7 @@ const object1 ={
   });
   */
 
-  setTimeout(function(){
+ /* setTimeout(function(){
     console.log('timeout');
   }, 3000);//3000 milisecond = 3 second.
 //after 3 second the text timeout display.
@@ -58,7 +58,27 @@ console.log('next line');
  },3000);//display interval every three second;
 
 
-console.log('next line2');
+console.log('next line2');*/
+
+    [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+    ].forEach(function(value, index){
+        if(value === 'wash dishes'){
+            // return; it is the same as continue in a for loop.
+        }
+        console.log(index);
+       console.log(value);//display each value(the above array)with index (the first 0 so on) in the console
+    });
+
+     const regularFunction = function(param, param2){
+       console.log('hello');
+     };
+    const arrowFunction = (param, param2) => {
+        console.log('hello');
+    }
+  arrowFunction(); 
 
  </script>
 </body>
