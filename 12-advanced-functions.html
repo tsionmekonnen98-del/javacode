@@ -60,11 +60,12 @@ console.log('next line');
 
 console.log('next line2');*/
 
-    [
+  /*  [
         'make dinner',
         'wash dishes',
         'watch youtube'
     ].forEach(function(value, index){
+    
         if(value === 'wash dishes'){
             // return; it is the same as continue in a for loop.
         }
@@ -79,6 +80,30 @@ console.log('next line2');*/
         console.log('hello');
     }
   arrowFunction(); 
+  */
+
+ console.log([1, -3, 5].filter((value, index) =>{
+/*
+    if(value >= 0){
+      return true;
+    } else {
+      return false;
+    }
+      */
+   return value >=0;
+  
+})) ;
+
+ console.log([1, 1, 3].map((value, index)=>{
+     return  value + 10; 
+
+  }));
+/* this code does the same thing the code above.
+  console.log([1, 1, 3].map(value=> value + 10));*/
+
+
+
+
 
  </script>
 </body>
